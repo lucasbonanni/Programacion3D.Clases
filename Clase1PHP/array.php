@@ -18,26 +18,18 @@
 		<h1>Mañana o Tarde</h1>
 	</div>
 	<div class="CajaInicio animated bounceInRight"> 
-		<h1>Momento del día</h1>
-		<?php 
+		<h1>Array de colores</h1>
+		<?php
+			$colores = array("#A12B2B", "#31A12B", "#D7DF39","#3941DF" );
 
-			echo "<br><br><br><h1>";
-			$tipo = date("a");
-			if($tipo == "am")
-				if(date("H") > 7)
-					echo date("h:i:s")." de la mañana";
-				else
-					echo date("h:i:s")." de la Madrugada";
-			else
-				if(date("H") < 19)
-					echo date("h:i:s")." de la tarde";
-				else
-					echo date("h:i:s")." de la Noche";
-			echo "</h1><br><br><br>"
+
+		foreach($colores as &$valor){
+			echo "<p style="."background-color:$valor"."> Texto de colores </p>";
+		}
+		
 		?>
 
-		<br>
-		<br>
+
 		<a href="index.html" class="list-group-item  list-group-item list-group-item-info">
 			<h4 class="list-group-item-heading">Volver a Inicio</h4>
 		</a>
