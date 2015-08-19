@@ -15,18 +15,27 @@
 <body>
 <div class="container">
 	<div class="Page-header">
-		<h1>Suma</h1>
+		<h1>Mañana o Tarde</h1>
 	</div>
 	<div class="CajaInicio animated bounceInRight"> 
-		<?php
-		echo "<h1> Primera Suma </h1>";
-		$num1 =32;
-		$num2 =12;
-		$resultado = $num1 + $num2;
-			echo "$resultado"."\t Resultado con comillas<br>";
-			echo $resultado."\t Resultado sin comillas<br>";
-			echo '$resultado'."\t Resultado entre comillas simples <br>";
+		<h1>Momento del día</h1>
+		<?php 
+
+			echo "<br><br><br><h1>";
+			$tipo = date("a");
+			if($tipo == "am")
+				if(date("H") > 7)
+					echo "mañana";
+				else
+					echo "Madrugada";
+			else
+				if(date("H") < 19)
+					echo "tarde";
+				else
+					echo "Noche";
+			echo "</h1><br><br><br>"
 		?>
+
 		<br>
 		<br>
 		<a href="index.html" class="list-group-item  list-group-item list-group-item-info">
